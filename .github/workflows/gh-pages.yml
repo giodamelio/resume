@@ -10,9 +10,8 @@ jobs:
   update-resume-pages:
     runs-on: ubuntu-22.04
     permissions:
-      # This makes sure that this action has permissions to push to
-      # the gh-pages branch.
-      contents: write
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@v6

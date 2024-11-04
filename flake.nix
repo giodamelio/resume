@@ -11,6 +11,7 @@
       imports = [];
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
       perSystem = { config, self', inputs', pkgs, system, ... }: {
+        # Package the macchiato resume theme
         packages.theme-macchiato = pkgs.buildNpmPackage rec {
           pname = "jsonresume-theme-macchiato";
           version = "2024-11-4";
@@ -28,25 +29,36 @@
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = 1;
         };
 
+        # Conver the resume.nix to pretty printed JSON
+        packages.resume-json = pkgs.stdenv.mkDerivation {
+          name = "resume-json";
+          unpackPhase = "true";
+          buildPhase = ''
+            echo '${builtins.toJSON (import ./resume.nix)}' | ${pkgs.jq}/bin/jq > resume.json
+          '';
+          installPhase = ''
+            mkdir -p $out
+            mv resume.json $out/
+          '';
+        };
+
+        # Render my resume to html with resumed
         packages.resume-html = let
           themePackage = self'.packages.theme-macchiato;
+          jsonResume = self'.packages.resume-json;
         in pkgs.stdenv.mkDerivation {
           name = "resume";
           src = ./.; # Adjust if `resume.nix` is in a different directory
 
-          buildInputs = [ pkgs.resumed pkgs.nix themePackage ];
+          buildInputs = [ pkgs.resumed themePackage jsonResume ];
 
           buildPhase = ''
-            # Convert resume.nix to JSON
-            nix eval --raw --impure --expr 'builtins.toJSON (import ./resume.nix)' > resume.json
-
-            # Render the resume to HTML using resumed
-            resumed render resume.json --theme ${themePackage}/lib/node_modules/jsonresume-theme-macchiato/index.js --output resume.html
+            resumed render ${jsonResume}/resume.json --theme ${themePackage}/lib/node_modules/jsonresume-theme-macchiato/index.js --output resume.html
           '';
 
           installPhase = ''
-            mkdir -p $out/bin
-            cp resume.html $out/bin/
+            mkdir -p $out
+            cp resume.html $out/
           '';
         };
       };

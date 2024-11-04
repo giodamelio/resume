@@ -1,14 +1,14 @@
 ---
 name: Update Github Pages
 
-'on':
+on:
   push:
     branches:
       - main
 
 jobs:
   update-resume-pages:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
@@ -18,7 +18,7 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v6
       - uses: DeterminateSystems/magic-nix-cache-action@v2
       - name: Build Site
-        run: nix build . -L
+        run: nix build .#resume-html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -26,5 +26,4 @@ jobs:
         with:
           path: ./result
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4

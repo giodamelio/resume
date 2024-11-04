@@ -59,6 +59,7 @@
           installPhase = ''
             mkdir -p $out
             cp resume.html $out/
+            ln -s $out/resume.html $out/index.html
           '';
         };
       };

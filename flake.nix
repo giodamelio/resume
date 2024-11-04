@@ -25,10 +25,6 @@
               url = "https://patch-diff.githubusercontent.com/raw/biosan/jsonresume-theme-macchiato/pull/22.patch";
               hash = "sha256-sq5gOiY35uJF7k0Hxx19VMh1Gn9i2lWAlbNAgqBboHM=";
             })
-
-            # Make the sidebar showup properly when printing to PDF
-            # Make the font for the skills a bit smaller so they don't go to the next page
-            ./print-to-pdf-properly.patch
           ];
 
           npmDepsHash = "sha256-yK7Yp2580XiGv1nHmyBnnF7dLlADOP8NWLvuzAMclOo=";

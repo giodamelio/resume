@@ -34,7 +34,9 @@
           name = "resume-json";
           unpackPhase = "true";
           buildPhase = ''
-            echo '${builtins.toJSON (import ./resume.nix)}' | ${pkgs.jq}/bin/jq > resume.json
+            ${pkgs.jq}/bin/jq > resume.json <<EOF
+            ${builtins.toJSON (import ./resume.nix)}
+            EOF
           '';
           installPhase = ''
             mkdir -p $out

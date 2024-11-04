@@ -23,13 +23,16 @@
             hash = "sha256-ssqZBlVnEtOSldDrEAPsmTxAdGozeABdt98xSXv0Fe0=";
           };
 
-          # Patch the theme so the company titles show up
-          # See PR: https://github.com/biosan/jsonresume-theme-macchiato/pull/22
           patches = [
+            # Patch the theme so the company titles show up
+            # See PR: https://github.com/biosan/jsonresume-theme-macchiato/pull/22
             (pkgs.fetchpatch {
               url = "https://patch-diff.githubusercontent.com/raw/biosan/jsonresume-theme-macchiato/pull/22.patch";
               hash = "sha256-sq5gOiY35uJF7k0Hxx19VMh1Gn9i2lWAlbNAgqBboHM=";
             })
+
+            # Make the sidebar showup properly when printing to PDF
+            ./print-to-pdf-properly.patch
           ];
 
           npmDepsHash = "sha256-yK7Yp2580XiGv1nHmyBnnF7dLlADOP8NWLvuzAMclOo=";
@@ -58,7 +61,7 @@
           themePackage = self'.packages.theme-macchiato;
           jsonResume = self'.packages.resume-json;
         in pkgs.stdenv.mkDerivation {
-          name = "resume";
+          name = "resume-html";
           src = ./.; # Adjust if `resume.nix` is in a different directory
 
           buildInputs = [ pkgs.resumed themePackage jsonResume ];
@@ -71,6 +74,39 @@
             mkdir -p $out
             cp resume.html $out/
             ln -s $out/resume.html $out/index.html
+          '';
+        };
+
+        # Print html resume to a PDF
+        packages.resume-pdf = let
+          htmlResume = self'.packages.resume-html;
+        in pkgs.stdenv.mkDerivation {
+          name = "resume-pdf";
+
+          unpackPhase = "true";
+
+          buildInputs = [
+              htmlResume
+              pkgs.puppeteer-cli
+
+              # Fonts
+              pkgs.fontconfig
+              pkgs.lato
+              pkgs.texlivePackages.josefin
+          ];
+
+          # Set some env vars to make puppeteer work
+          XDG_CONFIG_HOME = "/tmp/.chromium";
+          XDG_CACHE_HOME = "/tmp/.chromium";
+          FONTCONFIG_PATH = "${pkgs.fontconfig.out}/etc/fonts";
+
+          buildPhase = ''
+            ${pkgs.puppeteer-cli}/bin/puppeteer print ${htmlResume}/resume.html resume.pdf --wait-until networkidle0 --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print
+          '';
+
+          installPhase = ''
+            mkdir -p $out
+            cp resume.pdf $out/
           '';
         };
       };

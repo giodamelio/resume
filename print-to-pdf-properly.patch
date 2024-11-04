@@ -1,0 +1,19 @@
+diff --git a/src/style.css b/src/style.css
+index db9f392..8768845 100644
+--- a/src/style.css
++++ b/src/style.css
+@@ -304,14 +304,6 @@ ul.two-column li {
+     padding: 0 22px 0 34px;
+   }
+ 
+-  .container {
+-    page-break-inside: avoid;
+-  }
+-
+-  .work-container .item {
+-    page-break-inside: avoid;
+-  }
+-
+   .fa-external-link {
+     display: none;
+   }

@@ -70,6 +70,9 @@
             mkdir -p $out
             cp resume.html $out/
             ln -s $out/resume.html $out/index.html
+
+            # Copy static files
+            cp -R ${themePackage}/lib/node_modules/jsonresume-theme-macchiato/static/* $out/
           '';
         };
 

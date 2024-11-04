@@ -8,6 +8,7 @@ on:
 
 jobs:
   update-resume-pages:
+    name: Update Github Pages
     runs-on: ubuntu-latest
     permissions:
       pages: write

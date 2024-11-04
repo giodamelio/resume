@@ -7,7 +7,6 @@
     website = "https://giodamelio.com";
     summary = "I am a jack of all trades developer who enjoys building reliable, scalable services as much as fine-tuning deployment pipelines. I've gained a broad range of skills working on small, dynamic teams and thrive when I get to wear multiple hats. I'm passionate about open-source software, which I've relied on almost exclusively for years, and I'm always excited to pick up new languages or frameworks—whether it's for work or just for fun.";
     location = {
-      postalCode = "98121";
       city = "Seattle";
       countryCode = "US";
       region = "WA";

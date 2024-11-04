@@ -104,6 +104,15 @@
             cp resume.pdf $out/
           '';
         };
+
+        # The whole site including the html and pdf
+        packages.default = let
+          htmlResume = self'.packages.resume-html;
+          pdfResume = self'.packages.resume-pdf;
+        in pkgs.symlinkJoin {
+          name = "resume-full";
+          paths = [ htmlResume pdfResume ];
+        };
       };
       flake = {};
     };

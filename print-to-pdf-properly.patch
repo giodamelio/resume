@@ -1,5 +1,5 @@
 diff --git a/src/style.css b/src/style.css
-index db9f392..8768845 100644
+index db9f392..9628bb8 100644
 --- a/src/style.css
 +++ b/src/style.css
 @@ -304,14 +304,6 @@ ul.two-column li {
@@ -17,3 +17,18 @@ index db9f392..8768845 100644
    .fa-external-link {
      display: none;
    }
+@@ -381,7 +373,7 @@ ul.two-column li {
+ }
+ 
+ .main-skill {
+-  font-size: 80%;
++  font-size: 0.6em;
+ }
+ 
+ .skill {
+@@ -389,4 +381,5 @@ ul.two-column li {
+   padding: .15em;
+   background: ghostwhite;
+   border-radius: 5px;
++  font-size: 0.6em;
+ }

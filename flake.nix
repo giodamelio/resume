@@ -32,6 +32,7 @@
             })
 
             # Make the sidebar showup properly when printing to PDF
+            # Make the font for the skills a bit smaller so they don't go to the next page
             ./print-to-pdf-properly.patch
           ];
 

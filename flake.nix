@@ -23,6 +23,15 @@
             hash = "sha256-ssqZBlVnEtOSldDrEAPsmTxAdGozeABdt98xSXv0Fe0=";
           };
 
+          # Patch the theme so the company titles show up
+          # See PR: https://github.com/biosan/jsonresume-theme-macchiato/pull/22
+          patches = [
+            (pkgs.fetchpatch {
+              url = "https://patch-diff.githubusercontent.com/raw/biosan/jsonresume-theme-macchiato/pull/22.patch";
+              hash = "sha256-sq5gOiY35uJF7k0Hxx19VMh1Gn9i2lWAlbNAgqBboHM=";
+            })
+          ];
+
           npmDepsHash = "sha256-yK7Yp2580XiGv1nHmyBnnF7dLlADOP8NWLvuzAMclOo=";
           npmInstallFlags = ["--omit=dev"];
           dontNpmBuild = true;

@@ -16,12 +16,7 @@
           pname = "jsonresume-theme-macchiato";
           version = "2024-11-4";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "biosan";
-            repo = pname;
-            rev = "c783186d31c88924b7808bf65a892cef233099c4";
-            hash = "sha256-ssqZBlVnEtOSldDrEAPsmTxAdGozeABdt98xSXv0Fe0=";
-          };
+          src = ./macchiato;
 
           patches = [
             # Patch the theme so the company titles show up

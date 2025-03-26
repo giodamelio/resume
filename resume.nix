@@ -26,6 +26,19 @@
   };
   work = [
     {
+      name = "Fathom - AI Meeting Assistant";
+      position = "Senior Software Developer";
+      startDate = "2024-12";
+      endDate = "2025-03";
+      summary = "Enhanced Fathom’s AI-powered note-taking platform by building new features, improving integrations, and optimizing internal tools to streamline both user and team workflows.";
+      highlights = [
+        "Developed a meeting chat integration, enabling users to control the meeting bot with commands while also serving as a marketing channel."
+        "Built an AI pipeline to generate concise summaries and titles for meetings, enhancing accessibility and user experience."
+        "Implemented an integration to simplify team onboarding and facilitate smoother coordination between prospective users and the sales team."
+        "Enhanced the internal admin UI with new features to improve customer support workflows, debugging efficiency, and auditability."
+      ];
+    }
+    {
       name = "BackNine Insurance and Financial Services";
       position = "Senior Software Developer";
       startDate = "2024-04";
@@ -171,6 +184,14 @@
         "Route53"
         "S3"
         "IAM"
+      ];
+    }
+    {
+      name = "AI & LLM";
+      keywords = [
+        "AI Pipeline Creation"
+        "Resilient AI Pipelines"
+        "Text Summarization"
       ];
     }
   ];

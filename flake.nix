@@ -97,7 +97,7 @@
           FONTCONFIG_PATH = "${pkgs.fontconfig.out}/etc/fonts";
 
           buildPhase = ''
-            ${pkgs.puppeteer-cli}/bin/puppeteer print ${htmlResume}/resume.html resume.pdf --wait-until networkidle0 --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print
+            ${pkgs.puppeteer-cli}/bin/puppeteer print ${htmlResume}/resume.html resume.pdf --wait-until networkidle0 --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print --no-sandbox
           '';
 
           installPhase = ''

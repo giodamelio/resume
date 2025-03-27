@@ -14,7 +14,7 @@
         # Package the macchiato resume theme
         packages.theme-macchiato = pkgs.buildNpmPackage rec {
           pname = "jsonresume-theme-macchiato";
-          version = "2024-11-4";
+          version = "2025-03-27";
 
           src = ./macchiato;
 

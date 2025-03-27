@@ -199,12 +199,12 @@ ul.two-column li {
 }
 
 .container {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .keyline {
   width: 45px;
-  margin: 8px 0 10px;
+  margin: 2px 0 4px;
   border-top: 1px solid #56817A;
 }
 
@@ -279,7 +279,7 @@ ul.two-column li {
 }
 
 .item {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .item:last-child {

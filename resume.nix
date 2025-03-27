@@ -5,7 +5,7 @@
     email = "gio@damelio.net";
     phone = "1.206.372.3323";
     website = "https://giodamelio.com";
-    summary = "I am a jack of all trades developer who enjoys building reliable, scalable services as much as fine-tuning deployment pipelines. I've gained a broad range of skills working on small, dynamic teams and thrive when I get to wear multiple hats. I'm passionate about open-source software, which I've relied on almost exclusively for years, and I'm always excited to pick up new languages or frameworks—whether it's for work or just for fun.";
+    summary = "I'm a jack-of-all-trades developer who thrives on building reliable, scalable services and fine-tuning deployment pipelines. Working on small, dynamic teams has given me a broad skill set spanning development, software architecture, and DevOps. I'm passionate about open-source software and always eager to explore new languages and frameworks, whether for work or fun.";
     location = {
       city = "Seattle";
       countryCode = "US";
@@ -34,7 +34,7 @@
       highlights = [
         "Developed a meeting chat integration, enabling users to control the meeting bot with commands while also serving as a marketing channel."
         "Built an AI pipeline to generate concise summaries and titles for meetings, enhancing accessibility and user experience."
-        "Implemented an integration to simplify team onboarding and facilitate smoother coordination between prospective users and the sales team."
+        "Implemented an integration to simplify team onboarding and facilitate smoother coordination between prospective users and the sales team, improving team edition sales."
         "Enhanced the internal admin UI with new features to improve customer support workflows, debugging efficiency, and auditability."
       ];
     }
@@ -58,7 +58,6 @@
       endDate = "2023-01";
       summary = "Worked on the signup web app to ensure smooth multi-country compliance and improve data accuracy through robust state management.";
       highlights = [
-        "Built solutions to support business expansion into new markets."
         "Developed tools for rapid rollout of marketing referral programs."
         "Led a project to enable automated, large-scale targeted marketing."
         "Built a webhook allowing non-technical staff to create referral campaigns independently."
@@ -189,8 +188,7 @@
     {
       name = "AI & LLM";
       keywords = [
-        "AI Pipeline Creation"
-        "Resilient AI Pipelines"
+        "Resilient AI Pipeline Creation"
         "Text Summarization"
       ];
     }

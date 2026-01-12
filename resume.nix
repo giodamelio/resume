@@ -1,7 +1,7 @@
 {
   basics = {
     name = "Giovanni d'Amelio";
-    label = "Software Developer";
+    label = "Senior Software Developer";
     email = "gio@damelio.net";
     phone = "1.206.372.3323";
     website = "https://giodamelio.com";

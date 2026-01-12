@@ -67,9 +67,15 @@ body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: 400;
   background: white;
-  margin: 50px 0 100px;
+  margin: 0 0 100px;
   letter-spacing: .3px;
   color: #39424B;
+}
+
+@media (min-width: 768px) {
+  body {
+    margin-top: 50px;
+  }
 }
 
 h1,
@@ -307,6 +313,11 @@ ul.two-column li {
   .fa-external-link {
     display: none;
   }
+
+  /* Hide PDF link when printing */
+  .pdf-link {
+    display: none !important;
+  }
 }
 
 /* Components */
@@ -382,4 +393,31 @@ ul.two-column li {
   background: ghostwhite;
   border-radius: 5px;
   font-size: 0.6em;
+}
+
+/* PDF Link - Diagonal Corner Triangle */
+.pdf-link {
+  position: fixed;
+  top: -100px;
+  right: -100px;
+  width: 170px;
+  height: 170px;
+  background: #56817A;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  transform: rotate(45deg);
+  transform-origin: center center;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.pdf-link:hover {
+  background: #467067;
+  color: white;
 }

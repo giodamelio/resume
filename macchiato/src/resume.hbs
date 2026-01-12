@@ -3,13 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=yes, user-scalable=yes">
   <title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
   <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   {{{ style }}}
 </head>
 
 <body>
+  <a href="/resume.pdf" class="pdf-link">View as PDF</a>
   <main id="resume" class="page">
     {{> resume-header}}
     <div class="resume-content">

@@ -114,6 +114,10 @@
           name = "resume-full";
           paths = [ htmlResume pdfResume ];
         };
+
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [];
+        };
       };
       flake = {};
     };

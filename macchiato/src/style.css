@@ -1,5 +1,15 @@
 /* Utils */
-/*----- Colors -----*/
+:root {
+  --primary: #56817A;
+  --primary-dark: #467067;
+  --brand-accent: #b03052;
+  --link-hover: #2895F1;
+  --text-color: #39424B;
+  --muted: #999;
+  --tag-bg: ghostwhite;
+  --surface: #ffffff;
+  --surface-shadow: rgba(0, 0, 0, 0.5);
+}
 /*----- Fonts -----*/
 /*----- Dimensions and sizes -----*/
 /* Base */
@@ -60,16 +70,16 @@
 }
 
 html {
-  background: white;
+  background: var(--surface);
 }
 
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  background: white;
+  background: var(--surface);
   margin: 0 0 100px;
   letter-spacing: .3px;
-  color: #39424B;
+  color: var(--text-color);
 }
 
 @media (min-width: 768px) {
@@ -145,7 +155,7 @@ a {
 }
 
 a:hover {
-  color: #2895F1;
+  color: var(--link-hover);
 }
 
 a .fa-external-link {
@@ -167,7 +177,7 @@ blockquote {
 }
 
 em {
-  color: #999;
+  color: var(--muted);
 }
 
 ul {
@@ -211,7 +221,7 @@ ul.two-column li {
 .keyline {
   width: 45px;
   margin: 2px 0 4px;
-  border-top: 1px solid #56817A;
+  border-top: 1px solid var(--primary);
 }
 
 .pull-left {
@@ -237,7 +247,7 @@ ul.two-column li {
   height: 52px;
   width: 52px;
   border-radius: 50%;
-  border: 2px solid #56817A;
+  border: 2px solid var(--primary);
 }
 
 .summary {
@@ -247,7 +257,7 @@ ul.two-column li {
 .sublink {
   font-size: 70%;
   font-weight: 200;
-  color: dimgray;
+  color: var(--muted);
 }
 
 .capitalize {
@@ -256,14 +266,14 @@ ul.two-column li {
 
 /* Layouts */
 .page {
-  background: white;
+  background: var(--surface);
   width: 612px;
   min-height: 792px;
   display: block;
   margin: 0 auto;
-  border-top: 10px solid #56817A;
+  border-top: 10px solid var(--primary);
   padding: 36px 22px 30px 34px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 10px var(--surface-shadow);
 }
 
 .page:after {
@@ -390,7 +400,7 @@ ul.two-column li {
 .skill {
   margin: .15em;
   padding: .15em;
-  background: ghostwhite;
+  background: var(--tag-bg);
   border-radius: 5px;
   font-size: 0.6em;
 }
@@ -402,8 +412,8 @@ ul.two-column li {
   right: -100px;
   width: 170px;
   height: 170px;
-  background: #56817A;
-  color: white;
+  background: var(--primary);
+  color: var(--surface);
   font-size: 11px;
   font-weight: 700;
   text-align: center;
@@ -418,6 +428,6 @@ ul.two-column li {
 }
 
 .pdf-link:hover {
-  background: #467067;
-  color: white;
+  background: var(--primary-dark);
+  color: var(--surface);
 }

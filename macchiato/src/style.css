@@ -10,8 +10,27 @@
   --surface: #ffffff;
   --surface-shadow: rgba(0, 0, 0, 0.5);
 }
-/*----- Fonts -----*/
+
 /*----- Dimensions and sizes -----*/
+:root {
+  /* Two-column page layout */
+  --layout-left-column-width: 145px;
+  --layout-column-gap: 16px;
+
+  /* Left column info tags (icon + text rows); keep the text width about
+     21px less than --layout-left-column-width to fit the icon and gaps */
+  --info-tag-text-width: 124px;
+
+  /* Items (experience, education, etc.) */
+  --item-gap-below: 6px;
+  --item-summary-to-highlights-gap: 0px;
+
+  /* Bulleted lists (experience highlights) */
+  --list-indent: 15px;
+  --list-bullet-to-text-gap: 2px;
+}
+
+/*----- Fonts -----*/
 /* Base */
 @font-face {
   font-family: 'Josefin Sans';
@@ -182,11 +201,11 @@ em {
 
 ul {
   margin: 10px 0 0;
-  -webkit-padding-start: 25px;
+  padding-inline-start: var(--list-indent);
 }
 
 ul li {
-  padding-left: 10px;
+  padding-left: var(--list-bullet-to-text-gap);
 }
 
 ul.minimal {
@@ -254,6 +273,10 @@ ul.two-column li {
   margin: 5px 0 5px;
 }
 
+.summary+ul {
+  margin-top: var(--item-summary-to-highlights-gap);
+}
+
 .sublink {
   font-size: 70%;
   font-weight: 200;
@@ -284,8 +307,8 @@ ul.two-column li {
 
 .left-column {
   float: left;
-  width: 160px;
-  margin-right: 20px;
+  width: var(--layout-left-column-width);
+  margin-right: var(--layout-column-gap);
   word-wrap: break-word;
 }
 
@@ -295,7 +318,7 @@ ul.two-column li {
 }
 
 .item {
-  margin-bottom: 10px;
+  margin-bottom: var(--item-gap-below);
 }
 
 .item:last-child {
@@ -370,7 +393,7 @@ ul.two-column li {
   text-transform: none;
   display: inline-block;
   vertical-align: middle;
-  width: 139px;
+  width: var(--info-tag-text-width);
 }
 
 .references-container .fa {

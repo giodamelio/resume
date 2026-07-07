@@ -26,6 +26,18 @@
   };
   work = [
     {
+      name = "Software Consulting";
+      position = "Software Architect and Developer";
+      startDate = "2025-07";
+      endDate = "Present";
+      summary = "Help multiple clients take on several custom software development projects.";
+      highlights = [
+        "Work with clients to understand business need and ideate possible solutions."
+        "Define project scope and deliver a plan to get it done."
+        "Develop custom software from the ground up to match client requirements, adjusting as needed during the process."
+      ];
+    }
+    {
       name = "Fathom - AI Meeting Assistant";
       position = "Senior Software Developer";
       startDate = "2024-12";
@@ -113,6 +125,13 @@
       ];
     }
     {
+      name = "AI & LLM";
+      keywords = [
+        "Resilient AI Pipeline Creation"
+        "Text Summarization"
+      ];
+    }
+    {
       name = "Backend Frameworks";
       keywords = [
         "Express"
@@ -183,13 +202,6 @@
         "Route53"
         "S3"
         "IAM"
-      ];
-    }
-    {
-      name = "AI & LLM";
-      keywords = [
-        "Resilient AI Pipeline Creation"
-        "Text Summarization"
       ];
     }
   ];
